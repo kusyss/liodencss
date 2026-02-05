@@ -1,83 +1,89 @@
-/* ==========================
-FONT
-========================== */
+
+
+/* FONT (From Google Fonts) */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-body, h1, h2, h3, h4, h5, h6,
-p, a, input, select, textarea, button,
-.panel, .singlebox {
-    font-family: 'Abril Fatface', cursive !important;
-}
-
-/* ==========================
-BACKGROUND
-========================== */
+/* BACKGROUND */
 body, #container {
-    background: url("https://i.imgur.com/fbIlZNO.jpg") center fixed !important;
-    background-size: cover !important;
-}
+	background: url("https://i.imgur.com/fbIlZNO.jpg") center fixed !important;
+	background-size: cover !important;
+	font-family: 'Abril Fatface', cursive; /* TU ustawiamy globalnie */
+/* MAIN PANEL */
 
-/* ==========================
-MAIN LAYOUT
-========================== */
+/* RIGHT SIDE */
 .container.main {
-    background: transparent;
-    border: none;
+	background: rgba(1, 1, 1, 0.5);
+	border: none;
+	box-shadow: none;
+	border-radius: 0px
 }
 
+/* LEFT SIDE */
 .col-md-9 {
-    background: none;
-    border-right: none;
+	background: none;
+        border-right: none
 }
 
-/* ==========================
-TOPBAR
-========================== */
+/* TOPBAR ("Welcome back, ___") */
+
 .topbar {
-    background: rgba(1,1,1,0.5) !important;
-    border: none;
-    color: #D0D8D9 !important;
+	background: #262523;
+	border: none;
+	border-top: none;
+	color: #000000;
+	border-radius: 0px;
 }
 
-/* ==========================
-NAVBAR
-========================== */
+/* NAVBAR (Den/Crossroads/Etc.) */
+
 .navbar {
-    background: linear-gradient(135deg, #D0D8D9, #262523);
-    border: 2px solid #262523;
+    background: linear-gradient(135deg, #D0D8D9, #262523); /* gradient od jasnoszarego do ciemnego */
+    border: 2px solid #262523; /* elegancka obramówka */
+    color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
 }
 
+/* NAVBAR BUTTONY */
 .navbar li a {
     color: #E0DAD5 !important;
     padding: 10px 18px;
     border-radius: 8px;
-    background: rgba(58,61,65,0.8);
-    box-shadow: 0 5px #262523, 0 10px 15px rgba(0,0,0,0.3);
-    transition: 0.2s ease;
+    background: #3A3D41; /* podstawa przycisku */
+    box-shadow: 0 5px #262523, 0 10px 15px rgba(0,0,0,0.3); /* efekt 3D */
+    transition: all 0.2s ease;
 }
 
+/* PRZYCISK HOVER */
 .navbar li a:hover {
-    background: rgba(90,93,97,0.8);
+    background: #5A5D61; /* lekko jaśniejszy przycisk przy hover */
     color: #ffffff !important;
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* efekt unoszenia */
     box-shadow: 0 8px #262523, 0 12px 20px rgba(0,0,0,0.35);
 }
 
-/* ==========================
-BREADCRUMB
-========================== */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* BREADCRUMB (Home / Den) */
+
 .breadcrumb {
     background: rgba(0,0,0,0.5);
     border: 2px solid #8C6D73;
     border-radius: 12px;
     padding: 6px 12px;
-    color: #8C6D73 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    color: #8C6D73 !important; /* całość w tym kolorze */
     font-weight: bold;
+    font-family: 'Abril Fatface', cursive;
     position: relative;
 }
 
+/* credit po prawej jako pseudo-element */
 .breadcrumb::after {
     content: "Nie wkurwiaj lwa jak sra";
     color: #8C6D73;
@@ -86,112 +92,600 @@ BREADCRUMB
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* usuń żółty kolor z active */
 .breadcrumb .active {
     color: #8C6D73 !important;
 }
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px)  {
+        .breadcrumb::after {
+            right: 20%
+        }
+    }
+
+    @media only screen and (max-width: 991px) and (min-width: 768px)  {
+        .breadcrumb::after {
+            right: 20%
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .breadcrumb::after {
+            right: 22%
+        }
+    }
+
+/* BOOKMARK BUTTON */
+
+input.floatright, input.floatright:hover {
+	background: rgba(1, 1, 1, 0.5) !important;
+        border: none !important;
+	border-radius: 0px;
+	color: #D0D8D9 !important;    
+}
+
+/* SWITCH ACCOUNT BUTTON */
+
+button.button, button.button:hover {
+	background: rgba(1, 1, 1, 0.5);
+        border: none !important;
+	border-radius: 0px;
+        text-shadow: none !important;
+	color: #000000 !important
+}
+
+/* ALERTS (ie. "Your lionesses have returned from hunting!") */
+
+.alert,
+.alert-warning,
+.alert-danger {
+	background: rgba(1, 1, 1, 0.5) !important;
+	border: none;
+	color: #000000;
+	border-radius: 0px !important
+}
+
+/* BIGGEST HEADER ("___"'s DEN) */
+
+h1 {
+	color: #000000;
+	font-size: 90px;
+	text-align: center;
+        font-family: 'FONT NAME'
+}
+
+
+/* MEDIUM HEADER */
+
+h2 {
+	color: #D0D8D9;
+	font-size: 24px;
+	text-align: center
+}
+
+
+/* SMALL HEADER */
+
+h3 {
+	color: #D0D8D9 !important;
+	font-size: 14px !important
+}
+
+/* RIGHT SIDE PANEL HEADER */
+
+.sidebar h3 {
+	color: #D0D8D9 !important;
+        font-size: 26px !important;
+        font-family: 'FONT NAME'
+}
+
+/* RIGHT SIDE PANELS */
+.panel {
+	background: rgba(1, 1, 1, 0.5) !important;
+	box-shadow: none !important;
+	border: none !important;
+	color: #D0D8D9 !important;
+	border-radius: 0px
+}
 
 /* ==========================
-IMAGES
+   KOLORY LICZNIKÓW / PASKÓW – PEŁNE NADPISANIE
 ========================== */
-div#lion_image,
+
+/* Tło paska */
+.progress, 
+.progress-bar, 
+.progress div, 
+.progress span {
+    background: #1c1c1c !important; /* ciemnoszare tło */
+    color: #D0D8D9 !important; /* jasny tekst */
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    line-height: 20px !important;
+    text-align: center !important;
+}
+
+/* Wypełnienie paska */
+.progress-bar {
+    background: #8C6D73 !important; /* kolor samego wskaźnika */
+}
+
+/* Tekst liczników w środku paska */
+.progress div, 
+.progress span {
+    color: #D0D8D9 !important;
+}
+
+
+
+/* CHAT */
+
+.s-chat-message:nth-child(even) /* Even Numbered Messages */ {
+	background: rgba(1, 1, 1, 0.5) !important;
+        color: #000000 !important;
+	border: none !important
+}
+
+.s-chat-message:nth-child(odd) /* Odd Numbered Messages */ {
+	background: rgba(1, 1, 1, 0.5) !important;
+        color: #000000 !important;
+	border: none !important
+}
+
+.s-chat-message__pinned /* Pinned Message */ {
+	background: rgba(1, 1, 1, 0.5) !important;
+        color: #000000 !important;
+	border: none !important
+}
+
+.s-chat-message_timestamp /* Timestamps */ {
+	color: #000000 !important;
+}
+
+div#chatMessageContainer {
+	border: none !important;
+}
+
+button#label_currentChannel /* Channel Button ie. Main, Sales */ {
+	background: rgba(1, 1, 1, 0.5) !important;
+        color: #000000 !important;
+	border: none !important
+}
+
+/* LION INFO TABLE (Level, Stats, Territory Count, Etc.) */
+
+
+/* PANEL BACKGROUND COLOR */
+
+.table {
+	background: rgba(1, 1, 1, 0.5);
+	border: none !important;
+	border-collapse: separate;
+	border-radius: 0px
+}
+
+
+/* HEADERS COLOR (King Name + Title, "There are _ lions with mutations in _'s pride.") */
+
+.top,
+.bottom,
+th {
+	background: rgba(1, 1, 1, 0.5) !important;
+	color: #000000 !important;
+	border-radius: 0px
+}
+
+td.bottom a {
+        text-decoration: none !important
+}
+
+/* Color behind "Level, Stats, Branch, Territory" etc. */
+
+.inner-table .left {
+	background: rgba(155, 226, 242, 0.6) !important;
+        color: #2e2a2b;
+	border-radius: 0px
+}
+
+
+/* Color behind the number of all of the things above */
+
+.inner-table .right {
+	background: none;
+	border-radius: 0px !important
+}
+
+td.right {
+	border-radius: 0px !important
+}
+
+/* IGNORE */
+.right_odd {
+	background: none !important
+}
+
+/* Affects the color behind "_ Unsorted", "_ Pregnant Lionesses", "View Pride Overview", and cave/mound names */
+
+.cave-grid,
+.mound-grid {
+	background: rgba(1, 1, 1, 0.5);
+	border: none !important;
+	border-radius: 0px !important
+}
+
+/* FEED ALL, PLAY ALL */
+
+.feature {
+	background: rgba(1, 1, 1, 0.5) !important;
+	color: #000000 !important;
+	border: 1px solid #000000 !important;
+	border-radius: 0px !important
+}
+
+/* "King Dynasty, Pride Dynasty, Achievements, Showcase" Panels */
+
+.feature,
+div.left {
+	background: rgba(1, 1, 1, 0.5);
+	border: none;
+	border-radius: 0px !important
+}
+
+/* Block of color behind "Territory Description, Player Name, Avatar URL" etc. */
+
+.table .left {
+	background: rgba(1, 1, 1, 0.5);
+        border-radius: 0px
+}
+
+/* Color behind the content of the elements listed above */
+
+input,
+select,
+textarea {
+	background: rgba(1, 1, 1, 0.5) !important;
+	border: none !important;
+	border-radius: 0px !important;
+	color: #000000 !important;
+	box-shadow: none !important;
+	text-shadow: none !important
+}
+
+/* ACCOUNT OPTIONS PANELS  (Friend Requests Toggles, etc.) */
+
+.item-header {
+	background: rgba(1, 1, 1, 0.5) !important;
+	color: #000000  !important;
+	border-radius: 0px !important;
+}
+
+.item {
+	background: rgba(1, 1, 1, 0.5) !important;
+	border: none !important;
+	border-radius: 0px !important
+}
+
+/* ACCOUNT OPTIONS ON/OFF TOGGLE SWITCH */
+
+div.slider.round /* Background */ {
+	background: #000000 !important
+}
+
+div.slider.round::before /* Circle Part */ {
+	background: #000000 !important
+}
+
+/* Copyright, Terms of Service, CoC, etc. */
+
+div.container.footer.center.white.visible-lg.visible-md.visible-sm, div.container.footer.center.white.visible-lg.visible-md.visible-sm a {
+        color: #000000 !important;
+        text-shadow: none !important
+}
+
+/* LINK COLOR */
+
+a:link,
+a:visited {
+	color: #ffffff !important
+}
+
+/* LINK HOVER COLOR */
+
+a:hover {
+	color: #ffffff !important
+}
+
+
+/* BOX CONTAINER */
+
+.boxcontainer {
+	background: none;
+	height: auto;
+	padding: 0px;
+	justify-content: center;
+	display: flex
+}
+
+/* ==========================
+   SZARE NOWOCZESNE BOXY – FINAL
+========================== */
+.panel, 
+.feature, 
+.table .left, 
+.inner-table .left,
+.cave-grid, 
+.mound-grid {
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c) !important; /* ciemnoszary gradient */
+    border-radius: 12px !important; /* lekko zaokrąglone rogi */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 1px 3px rgba(255,255,255,0.05) !important; /* delikatny cień i efekt 3D */
+    color: #ffffff !important;
+    padding: 12px !important;
+    transition: all 0.3s ease !important;
+    border: none !important; /* usuwa stare ramki */
+}
+
+/* Hover efekt – lekko unosi boxy i pogłębia cień */
+.panel:hover, 
+.feature:hover, 
+.table .left:hover, 
+.inner-table .left:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.08) !important;
+}
+
+/* Dodatkowo upewniamy się, że wcześniejsze niebieskie tła nie wkradną się */
+.inner-table .left, 
+.table .left {
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c) !important;
+    color: #ffffff !important;
+}
+}
+
+
+
+/* SCROLL BAR */
+
+/* WIDTH */
+
+::-webkit-scrollbar {
+	width: 10px
+}
+
+
+/* BACKGROUND */
+
+::-webkit-scrollbar-track {
+	background: #ffffff
+}
+
+
+/* "THUMB" */
+
+::-webkit-scrollbar-thumb {
+	background: #000000;
+	border-radius: 0px
+}
+
+
+/* LION AND USER AVATAR OPACITY */
+
+div#lion_image {
+	opacity: 1
+}
+
 table#player img {
-    border-radius: 50% !important;
-    overflow: hidden;
+	opacity: 1
 }
 
-div.container.main > div:nth-child(1) > nav > div.navbar-header > a > img {
-    content: url("https://i.imgur.com/Ir3J7S0.png");
+
+/* CIRCULAR LION AND USER AVATAR */
+
+div#lion_image {
+	border-radius: 50% !important;
+	overflow: hidden;
+	margin-top: 15px; /* May need adjusting */
+	margin-left: 12px /* May need adjusting */
+}
+
+table#player img {
+	border-radius: 50% !important;
+	overflow: hidden
+}
+
+
+/* LIODEN LOGO REPLACER */
+
+div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
+	content: url(https://i.imgur.com/Ir3J7S0.png)
+}
+
+/* CAVE / MOUND IMAGES */
+
+div.cave-grid>img /* Pregnant Lionesses */ {
+	content: url('https://i.imgur.com/MGFUuHr.gifv') !important
+}
+
+/* New Cave Image */
+a[href$="cave.php?id=576720"] > div.cave-grid > img {
+    content: url('https://i.imgur.com/gys2UpT.png') !important;
+}
+
+a[href$="lionoverview.php?id=PLAYER ID"]>div.cave-grid>img /* Pride Overview */ {
+	content: url('https://i.imgur.com/gys2UpT.png') !important
+}
+
+a[href$="unsorted.php?id=PLAYER ID"]>div.cave-grid>img /* Unsorted */ {
+	content: url('https://i.imgur.com/gys2UpT.png') !important
+}
+
+.mound-grid img /* Mound(s) */ {
+	background: url("https://i.imgur.com/gys2UpT.png");
+	width: 0;
+	height: 0;
+	padding-top: 80px;
+	padding-right: 130px
+}
+
+/* MAKES BOXES/DESCRIPTION SHOW ON MOBILE */
+
+@media only screen and (max-width: 767px) {
+        .container.main .hidden-xs {
+            display: block !important;
+        }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+	display: block !important;
+}
+
+@media only screen and (min-width: 1200px) {
+		div.quote {
+			width: 790px;
+		}
+	}
+.singlebox {
+	max-width: 520px;   /* ← TU */
+	margin: 30px auto;
+	padding: 25px;
+
+	background: rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+
+	color: #e0e0e0;
+	text-align: center;
+}
+body, h1, h2, h3, h4, h5, h6, p, a, input, select, textarea, button, .panel, .singlebox {
+    font-family: 'Abril Fatface', cursive !important;
+}
+
+/* Neopets White Kougra - From Cursors-4U.com */
+* {
+  cursor: url('https://cdn.cursors-4u.net/css-previews/neopets-white-kougra-8a326b46-css.webp') 0 0, auto !important;
 }
 
 /* ==========================
-PLAYER INFO BOXES
+   LICZNIKI / PASKI W LIODEN
 ========================== */
+
+/* Tło i tekst wszystkich pasków w Lioden */
+.statBar {
+    background-color: #1c1c1c !important; /* tło paska */
+    border-radius: 12px !important;
+    height: 20px !important;
+    color: #D0D8D9 !important; /* tekst liczników */
+}
+
+/* Wypełnienie pasków */
+.statBar > div {
+    background-color: #8C6D73 !important; /* kolor wskaźnika */
+    border-radius: 12px !important;
+    color: #D0D8D9 !important; /* tekst w środku */
+    line-height: 20px !important;
+    text-align: center !important;
+}
+
+/* ==========================
+PLAYER INFO BOXES — FINAL FIX
+========================== */
+
+/* usuwa jasne tło z każdego elementu w środku */
 .table td *,
 .inner-table td * {
-    background: transparent !important;
+background: transparent !important;
 }
 
+/* właściwy ciemny box */
 .table td,
 .inner-table td {
-    background: linear-gradient(
-        180deg,
-        #4a4a4a 0%,
-        #404040 50%,
-        #2f2f2f 100%
-    ) !important;
-    color: #D0D8D9 !important;
-    border: 1px solid rgba(255,255,255,0.06) !important;
-    border-radius: 8px !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        inset 0 -2px 3px rgba(0,0,0,0.6);
+
+```
+background: linear-gradient(
+    180deg,
+    #4a4a4a 0%,
+    #404040 50%,
+    #2f2f2f 100%
+) !important;
+
+color: #D0D8D9 !important;
+
+border: 1px solid rgba(255,255,255,0.06) !important;
+border-radius: 8px !important;
+
+box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -2px 3px rgba(0,0,0,0.6);
 }
 
-/* ==========================
-STICKY SIDE LIONS
-========================== */
+/* Przyklejone obrazy boczne w Lioden */
 .lio-sticky {
-    position: fixed;
-    bottom: 20px;
-    z-index: 9999;
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
 }
 
+/* Lewy obrazek większy */
 .lio-left {
-    left: 15px;
-    width: 600px; /* większy lewy obrazek */
+  left: 15px;
+  width: 600px; /* większy lewy obrazek */
 }
 
+/* Prawy obrazek mniejszy */
 .lio-right {
-    right: 15px;
-    width: 400px; /* mniejszy prawy obrazek */
+  right: 15px;
+  width: 400px; /* mniejszy prawy obrazek */
 }
 
 .lio-sticky img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.25s ease;
-    border-radius: 10px; /* możesz ustawić 0 jeśli chcesz prostokąt */
-    border: none; /* usuwa białą ramkę */
+  width: 100%; /* dopasowuje się do szerokości diva */
+  height: auto;
+  transition: transform 0.25s ease;
+  border-radius: 10px; /* możesz zostawić lub ustawić 0 */
+  border: none; /* usuwa białą ramkę */
 }
 
 .lio-sticky:hover img {
-    transform: scale(1.2);
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.7));
+  transform: scale(1.2);
+  filter: drop-shadow(0 8px 15px rgba(0,0,0,0.7));
 }
 
-/* ==========================
-STICKERS
-========================== */
+
 /* Naklejka przy tabeli cooldowns */
 .cooldown-sticker {
-    position: absolute;  
-    top: 215px;        
-    right: -290px;     
-    width: 80px;        
-    height: auto;
-    z-index: 1000;      
-    transition: transform 0.25s ease;
+  position: absolute;  /* pozycjonowana względem tabeli */
+  top: 220px;           /* odległość od góry tabeli – zmień jeśli trzeba */
+  right: -290px;        /* odległość od prawej krawędzi tabeli */
+  width: 80px;         /* szerokość naklejki */
+  height: auto;
+  z-index: 1000;       /* żeby była nad tabelą */
+  transition: transform 0.25s ease;
 }
 
 .cooldown-sticker:hover {
-    transform: scale(1.2);  
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+  transform: scale(1.2);   /* powiększenie przy hover */
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
 }
-
 /* Naklejka przy innej tabeli */
 .sticker2 {
-    position: absolute;   
-    top: 395px;          
-    right: -300px;        
-    width: 200px;         
-    height: auto;
-    z-index: 1000;        
-    transition: transform 0.25s ease;
+  position: absolute;   /* pozycjonowanie względem kontenera tabeli */
+  top: 400px;            /* odległość od góry tabeli */
+  left: 1000px;         /* odległość od prawej krawędzi tabeli */
+  width: 200px;          /* szerokość naklejki */
+  height: auto;
+  z-index: 1000;        /* nad tabelą */
+  transition: transform 0.25s ease;
 }
 
 .sticker2:hover {
-    transform: scale(1.2);   
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+  transform: scale(1.2);   /* powiększenie przy hover */
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+}
+
+/* Tymczasowo ignorujemy kliknięcia obrazków przyklejonych */
+.lio-left,
+.lio-right {
+    pointer-events: none !important;
 }
