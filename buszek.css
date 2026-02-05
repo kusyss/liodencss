@@ -390,13 +390,13 @@ div.container.footer.center.white.visible-lg.visible-md.visible-sm, div.containe
 
 a:link,
 a:visited {
-	color: #ffffff !important
+	color: #D0D8D9 !important
 }
 
 /* LINK HOVER COLOR */
 
 a:hover {
-	color: #ffffff !important
+	color: #8C6D73 !important
 }
 
 
@@ -688,4 +688,21 @@ box-shadow:
 .lio-left,
 .lio-right {
     pointer-events: none !important;
+}
+/* CAVE / MOUND IMAGES */
+
+div.cave-grid>img /* Pregnant Lionesses */ {
+	content: url('https://postimg.cc/9rD9xKGv') !important
+}
+
+a[href$="520155"]>div.cave-grid>img {
+	content: url('https://postimg.cc/9rD9xKGv') !important
+}
+
+a[href$="lionoverview.php?id=576720"]>div.cave-grid>img /* Pride Overview */ {
+	content: url('https://postimg.cc/9rD9xKGv') !important
+}
+
+a[href$="unsorted.php?id=576720"]>div.cave-grid>img /* Unsorted */ {
+	content: url('https://postimg.cc/9rD9xKGv') !important
 }
