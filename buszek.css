@@ -765,25 +765,33 @@ input#postComment {
     color: #000;
     border-radius: 6px;
 }
-
 #commentBox::before {
     content: "the creatures are whispering.";
+    position: absolute;          /* konieczne, żeby header był nad boxem */
+    top: -100px;                 /* dopasowanie do wysokości headera */
+    left: 0;
+    width: 100%;
+    height: 100px;               /* wysokość headera */
+    
     background: 
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), /* lekki ciemny overlay, żeby tekst był widoczny */
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
         url('https://i.imgur.com/KXcToM0.gif') no-repeat center center;
-    background-size: cover; /* dopasowanie GIF-a do całego headera */
+    background-size: cover;      /* GIF wypełnia cały header */
+    
     color: #e6e6e6;
     font-weight: bold;
     letter-spacing: 3px;
-    display: block;
-    width: 99.9A%;
-    height: 95px; /* możesz zmienić wysokość */
-    position: absolute;
-    margin-top: -100px; /* dopasowane do wysokości */
-    padding-left: 15px;
-    padding-top: 35px; /* trochę miejsca od góry dla tekstu */
-    border-radius: 12px 12px 0 0; /* ładne zaokrąglenie rogów */
+
+    padding-left: 300px;          /* przesunięcie tekstu w poziomie */
+    padding-top: 35px;           /* przesunięcie tekstu w pionie */
+
+    border-radius: 12px 12px 0 0;
     box-shadow: 
         0 6px 14px rgba(0,0,0,0.6),
-        inset 0 1px 0 rgba(255,255,255,0.08); /* delikatny efekt 3D */
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    display: flex;               /* łatwe pozycjonowanie tekstu */
+    align-items: flex-start;     /* tekst od góry */
+    justify-content: flex-start; /* tekst od lewej */
+    z-index: 10;
 }
