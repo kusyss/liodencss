@@ -551,17 +551,12 @@ body, h1, h2, h3, h4, h5, h6, p, a, input, select, textarea, button, .panel, .si
 /* Naklejka przy innej tabeli */
 .sticker2 {
   position: absolute;   /* pozycjonowanie względem kontenera tabeli */
-  top: 400px;            /* odległość od góry tabeli */
-  left: 1000px;         /* odległość od prawej krawędzi tabeli */
-  width: 200px;          /* szerokość naklejki */
+  top: 900px;            /* odległość od góry tabeli */
+  left: 230px;         /* odległość od prawej krawędzi tabeli */
+  width: 400px;          /* szerokość naklejki */
   height: auto;
   z-index: 1000;        /* nad tabelą */
-  transition: transform 0.25s ease;
-}
 
-.sticker2:hover {
-  transform: scale(1.2);   /* powiększenie przy hover */
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
 }
 
 /* Tymczasowo ignorujemy kliknięcia obrazków przyklejonych */
@@ -714,4 +709,39 @@ content: url("https://i.imgur.com/fAx5vHw.jpg") !important;
 	background: #fff0f0;
 background: linear-gradient(90deg,rgba(255, 240, 240, 1) 4%, rgba(133, 133, 133, 1) 51%); !important
 	border-radius: 0px !important
+}
+.profile-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* przestrzeń między gifem a tekstem */
+  background: rgba(64, 64, 64, 0.6); /* półprzezroczysty #404040 */
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px); /* glassmorphism */
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.profile-gif {
+  width: 220px;       /* szerokość */
+  height: 220px;      /* wysokość dopasowana, żeby było kwadratowo */
+  border-radius: 50%; /* okrągły */
+  flex-shrink: 0;
+  object-fit: cover;  /* żeby GIF wypełnił całe koło */
+}
+
+.profile-content h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #FFD700;
+}
+
+.profile-content p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #e6e6e6;
 }
