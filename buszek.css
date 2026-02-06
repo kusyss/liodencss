@@ -146,24 +146,34 @@ button.button, button.button:hover {
 .alert-danger {
 	background: rgba(1, 1, 1, 0.5) !important;
 	border: none;
-	color: #000000;
+	color: #9FA6A5;
 	border-radius: 0px !important
 }
 
-/* BIGGEST HEADER ("___"'s DEN) */
-
 h1 {
-	color: #000000;
-	font-size: 90px;
-	text-align: center;
-        font-family: 'FONT NAME'
+    font-size: 150px;
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+
+    /* Gradient tekstu */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(38, 37, 35, 1) 51%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    /* Delikatny cień + glow */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6), 0 0 6px rgba(0,0,0,0.3);
 }
+
+
+
 
 
 /* MEDIUM HEADER */
 
 h2 {
-	color: #D0D8D9;
+	color: #D0D8D9 !important;
 	font-size: 24px;
 	text-align: center
 }
@@ -193,69 +203,7 @@ h3 {
 	border-radius: 0px
 }
 
-/* ==========================
-   KOLORY LICZNIKÓW / PASKÓW – PEŁNE NADPISANIE
-========================== */
 
-/* Tło paska */
-.progress, 
-.progress-bar, 
-.progress div, 
-.progress span {
-    background: #1c1c1c !important; /* ciemnoszare tło */
-    color: #D0D8D9 !important; /* jasny tekst */
-    border-radius: 12px !important;
-    font-weight: bold !important;
-    line-height: 20px !important;
-    text-align: center !important;
-}
-
-/* Wypełnienie paska */
-.progress-bar {
-    background: #8C6D73 !important; /* kolor samego wskaźnika */
-}
-
-/* Tekst liczników w środku paska */
-.progress div, 
-.progress span {
-    color: #D0D8D9 !important;
-}
-
-
-
-/* CHAT */
-
-.s-chat-message:nth-child(even) /* Even Numbered Messages */ {
-	background: rgba(1, 1, 1, 0.5) !important;
-        color: #000000 !important;
-	border: none !important
-}
-
-.s-chat-message:nth-child(odd) /* Odd Numbered Messages */ {
-	background: rgba(1, 1, 1, 0.5) !important;
-        color: #000000 !important;
-	border: none !important
-}
-
-.s-chat-message__pinned /* Pinned Message */ {
-	background: rgba(1, 1, 1, 0.5) !important;
-        color: #000000 !important;
-	border: none !important
-}
-
-.s-chat-message_timestamp /* Timestamps */ {
-	color: #000000 !important;
-}
-
-div#chatMessageContainer {
-	border: none !important;
-}
-
-button#label_currentChannel /* Channel Button ie. Main, Sales */ {
-	background: rgba(1, 1, 1, 0.5) !important;
-        color: #000000 !important;
-	border: none !important
-}
 
 /* LION INFO TABLE (Level, Stats, Territory Count, Etc.) */
 
@@ -276,7 +224,7 @@ button#label_currentChannel /* Channel Button ie. Main, Sales */ {
 .bottom,
 th {
 	background: rgba(1, 1, 1, 0.5) !important;
-	color: #000000 !important;
+	color: #8C6D73 !important;
 	border-radius: 0px
 }
 
@@ -288,7 +236,7 @@ td.bottom a {
 
 .inner-table .left {
 	background: rgba(155, 226, 242, 0.6) !important;
-        color: #2e2a2b;
+        color: #D0D8D9;
 	border-radius: 0px
 }
 
@@ -297,10 +245,12 @@ td.bottom a {
 
 .inner-table .right {
 	background: none;
+color: #D0D8D9;
 	border-radius: 0px !important
 }
 
 td.right {
+color: #D0D8D9;
 	border-radius: 0px !important
 }
 
@@ -322,7 +272,7 @@ td.right {
 
 .feature {
 	background: rgba(1, 1, 1, 0.5) !important;
-	color: #000000 !important;
+	color: #D0D8D9; !important;
 	border: 1px solid #000000 !important;
 	border-radius: 0px !important
 }
@@ -351,7 +301,7 @@ textarea {
 	background: rgba(1, 1, 1, 0.5) !important;
 	border: none !important;
 	border-radius: 0px !important;
-	color: #000000 !important;
+	color: #9FA6A5 !important;
 	box-shadow: none !important;
 	text-shadow: none !important
 }
@@ -360,7 +310,7 @@ textarea {
 
 .item-header {
 	background: rgba(1, 1, 1, 0.5) !important;
-	color: #000000  !important;
+	color: #D0D8D9;  !important;
 	border-radius: 0px !important;
 }
 
@@ -380,12 +330,7 @@ div.slider.round::before /* Circle Part */ {
 	background: #000000 !important
 }
 
-/* Copyright, Terms of Service, CoC, etc. */
 
-div.container.footer.center.white.visible-lg.visible-md.visible-sm, div.container.footer.center.white.visible-lg.visible-md.visible-sm a {
-        color: #000000 !important;
-        text-shadow: none !important
-}
 
 /* LINK COLOR */
 
@@ -504,32 +449,18 @@ div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
 	content: url(https://i.imgur.com/Ir3J7S0.png)
 }
 
-/* CAVE / MOUND IMAGES */
+/* Wszystkie jaskinie (cave grids) z GIF-em */
+.cave-grid img,
+.mound-grid img {
+    width: 200px;              /* szerokość obrazka */
+    height: 100px;             /* wysokość obrazka */
+    object-fit: cover;         /* obrazek wypełnia div proporcjonalnie */
+    border-radius: 8px;        /* opcjonalnie zaokrąglone rogi */
 
-div.cave-grid>img /* Pregnant Lionesses */ {
-	content: url('https://i.imgur.com/MGFUuHr.gifv') !important
+    /* Podmieniamy obrazki na GIF */
+    content: url("https://i.imgur.com/uRqwM5u.gif") !important;
 }
 
-/* New Cave Image */
-a[href$="cave.php?id=576720"] > div.cave-grid > img {
-    content: url('https://i.imgur.com/gys2UpT.png') !important;
-}
-
-a[href$="lionoverview.php?id=PLAYER ID"]>div.cave-grid>img /* Pride Overview */ {
-	content: url('https://i.imgur.com/gys2UpT.png') !important
-}
-
-a[href$="unsorted.php?id=PLAYER ID"]>div.cave-grid>img /* Unsorted */ {
-	content: url('https://i.imgur.com/gys2UpT.png') !important
-}
-
-.mound-grid img /* Mound(s) */ {
-	background: url("https://i.imgur.com/gys2UpT.png");
-	width: 0;
-	height: 0;
-	padding-top: 80px;
-	padding-right: 130px
-}
 
 /* MAKES BOXES/DESCRIPTION SHOW ON MOBILE */
 
@@ -568,57 +499,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, input, select, textarea, button, .panel, .si
   cursor: url('https://cdn.cursors-4u.net/css-previews/neopets-white-kougra-8a326b46-css.webp') 0 0, auto !important;
 }
 
-/* ==========================
-   LICZNIKI / PASKI W LIODEN
-========================== */
-
-/* Tło i tekst wszystkich pasków w Lioden */
-.statBar {
-    background-color: #1c1c1c !important; /* tło paska */
-    border-radius: 12px !important;
-    height: 20px !important;
-    color: #D0D8D9 !important; /* tekst liczników */
-}
-
-/* Wypełnienie pasków */
-.statBar > div {
-    background-color: #8C6D73 !important; /* kolor wskaźnika */
-    border-radius: 12px !important;
-    color: #D0D8D9 !important; /* tekst w środku */
-    line-height: 20px !important;
-    text-align: center !important;
-}
-
-/* ==========================
-PLAYER INFO BOXES — FINAL FIX
-========================== */
-
-/* usuwa jasne tło z każdego elementu w środku */
-.table td *,
-.inner-table td * {
-background: transparent !important;
-}
-
-/* właściwy ciemny box */
-~~
-.table td,
-.inner-table td {
-background: linear-gradient(
-    180deg,
-    #4a4a4a 0%,
-    #404040 50%,
-    #2f2f2f 100%
-) !important;
-
-color: #D0D8D9 !important;
-
-border: 1px solid rgba(255,255,255,0.06) !important;
-border-radius: 8px !important;
-
-box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.12),
-    inset 0 -2px 3px rgba(0,0,0,0.6);
-}
 
 /* Przyklejone obrazy boczne w Lioden */
 .lio-sticky {
@@ -794,4 +674,44 @@ input#postComment {
     align-items: flex-start;     /* tekst od góry */
     justify-content: flex-start; /* tekst od lewej */
     z-index: 10;
+}
+#lion_image > div > img:nth-child(1) {display: none;}
+}
+
+img[src$="cavedefault.jpg"] {
+content: url("https://i.imgur.com/fAx5vHw.jpg") !important;
+}
+/* -------------------------
+   Player UI - Background + Blur/Tint
+   ------------------------- */
+#player {
+    position: relative; /* potrzebne do pseudo-elementów */
+    background: url('https://i.imgur.com/wqTfhp2.png') center/cover no-repeat;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 20px;
+    color: #ffffff;
+}
+
+/* Tint + blur overlay */
+#player::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5); /* przyciemnienie */
+    backdrop-filter: blur(1px); /* blur tła */
+    z-index: 1;
+}
+
+/* Tekst i inne elementy nad overlay */
+#player > * {
+    position: relative;
+    z-index: 2;
+}
+/* ENERGY BAR COLOR */
+.progress-bar {
+	background: rgba(1, 1, 1, 0.5);
+	background: #fff0f0;
+background: linear-gradient(90deg,rgba(255, 240, 240, 1) 4%, rgba(133, 133, 133, 1) 51%); !important
+	border-radius: 0px !important
 }
